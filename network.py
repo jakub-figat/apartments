@@ -22,7 +22,7 @@ async def request_olx_apartment_pages_in_parallel(apartment_urls: list[str]) -> 
     url_iterator = iter(apartment_urls)
     results = []
 
-    await asyncio.gather(*(_request_html_from_olx(url_iterator, results) for _ in range(20)))
+    await asyncio.gather(*(_request_html_from_olx(url_iterator, results) for _ in range(10)))
     return results
 
 
